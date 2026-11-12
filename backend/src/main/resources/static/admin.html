@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#122a24">
+    <title>校园跑 · 管理后台</title>
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="app-shell admin-shell">
+    <aside class="sidebar" id="adminSidebar">
+        <a class="sidebar-brand" href="#dashboard">
+            <span class="brand-mark" id="adminBrand"></span>
+            <span><span class="brand-name">校园跑<span class="brand-dot">.</span></span><small>ADMIN CONSOLE</small></span>
+        </a>
+        <nav class="side-nav">
+            <span class="nav-section-label">运营概览</span>
+            <a class="nav-item" href="#dashboard" data-route="dashboard"><span class="nav-ico" data-icon="dashboard"></span><span>数据看板</span></a>
+            <span class="nav-section-label">业务管理</span>
+            <a class="nav-item" href="#applies" data-route="applies"><span class="nav-ico" data-icon="audit"></span><span>跑腿员审核</span><span class="nav-count hidden" id="applyCount">0</span></a>
+            <a class="nav-item" href="#users" data-route="users"><span class="nav-ico" data-icon="users"></span><span>用户管理</span></a>
+            <a class="nav-item" href="#orders" data-route="orders"><span class="nav-ico" data-icon="orders"></span><span>订单监管</span></a>
+        </nav>
+        <div class="sidebar-spacer"></div>
+        <div class="sidebar-tip">
+            <b>管理台使用提示</b>
+            <p>审核跑腿员时请核验学号与姓名；取消已接单的订单会同时通知发布者和跑腿员。</p>
+        </div>
+        <div class="sidebar-user">
+            <span id="adminSideAvatar"></span>
+            <div class="meta"><b id="adminSideName">管理员</b><small>系统管理员</small></div>
+            <button class="icon-btn" id="adminSideLogout" title="退出登录"><span data-icon="logout"></span></button>
+        </div>
+    </aside>
+    <div class="sidebar-mask hidden" id="adminMask"></div>
+
+    <section class="main">
+        <header class="topbar admin-topbar">
+            <button class="icon-btn admin-mobile-menu" id="adminMenuBtn"><span data-icon="menu"></span></button>
+            <div class="topbar-title" id="adminTitle">数据看板<small>校园跑运营概览</small></div>
+            <div class="topbar-spacer"></div>
+            <div class="topbar-search desktop-only" style="pointer-events:none">
+                <span data-icon="shield"></span><input value="毕业设计 · 演示环境" readonly>
+            </div>
+            <span id="adminTopAvatar" style="cursor:pointer"></span>
+        </header>
+        <main class="page admin-page" id="page"></main>
+    </section>
+</div>
+
+<div id="toastRoot" class="toast-root"></div>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/admin.js"></script>
+</body>
+</html>

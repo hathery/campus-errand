@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#103f33">
+    <title>校园跑 · 我的工作台</title>
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+        <a class="sidebar-brand" href="#hall">
+            <span class="brand-mark" id="sideBrand"></span>
+            <span><span class="brand-name">校园跑<span class="brand-dot">.</span></span><small>CAMPUS RUN</small></span>
+        </a>
+        <nav class="side-nav">
+            <span class="nav-section-label">发现</span>
+            <a class="nav-item" href="#hall" data-route="hall"><span class="nav-ico" data-icon="compass"></span><span>订单大厅</span></a>
+            <a class="nav-item" href="#publish" data-route="publish"><span class="nav-ico" data-icon="plus"></span><span>发布跑腿</span></a>
+            <span class="nav-section-label">我的任务</span>
+            <a class="nav-item" href="#published" data-route="published"><span class="nav-ico" data-icon="list"></span><span>我发布的</span></a>
+            <a class="nav-item" href="#accepted" data-route="accepted"><span class="nav-ico" data-icon="tasks"></span><span>我接的单</span><span class="nav-count hidden" id="acceptedCount">0</span></a>
+            <a class="nav-item" href="#runner" data-route="runner"><span class="nav-ico" data-icon="runner"></span><span>跑腿员中心</span></a>
+            <span class="nav-section-label">账户</span>
+            <a class="nav-item" href="#wallet" data-route="wallet"><span class="nav-ico" data-icon="wallet"></span><span>我的钱包</span></a>
+            <a class="nav-item" href="#profile" data-route="profile"><span class="nav-ico" data-icon="settings"></span><span>个人设置</span></a>
+        </nav>
+        <div class="sidebar-spacer"></div>
+        <div class="sidebar-tip">
+            <b>顺路，也是一种温柔</b>
+            <p>接单前请确认时间是否充裕，每一次按时送达都在积累你的信用分。</p>
+            <a class="mini-link" href="#runner">了解跑腿员规则 <span>→</span></a>
+        </div>
+        <div class="sidebar-user">
+            <span id="sideAvatar"></span>
+            <div class="meta">
+                <b id="sideName">同学</b>
+                <small id="sideRole">校园用户</small>
+            </div>
+            <button class="icon-btn" id="sideLogout" title="退出登录"><span data-icon="logout"></span></button>
+        </div>
+    </aside>
+
+    <section class="main">
+        <header class="topbar">
+            <div class="topbar-title" id="topTitle">订单大厅<small>看看有哪些顺路的请求</small></div>
+            <div class="topbar-spacer"></div>
+            <button class="icon-btn" id="bellBtn" title="通知"><span data-icon="bell"></span>
+                <span class="icon-badge hidden" id="notifBadge">0</span>
+            </button>
+            <span id="topAvatar" style="cursor:pointer"></span>
+        </header>
+        <main class="page" id="page"></main>
+    </section>
+
+    <nav class="bottom-nav">
+        <a href="#hall" data-route="hall"><span data-icon="compass"></span><span>大厅</span></a>
+        <a href="#publish" data-route="publish"><span data-icon="plus"></span><span>发布</span></a>
+        <a href="#published" data-route="published"><span data-icon="list"></span><span>任务</span></a>
+        <a href="#accepted" data-route="accepted"><span data-icon="tasks"></span><span>接单</span></a>
+        <a href="#wallet" data-route="wallet"><span data-icon="wallet"></span><span>钱包</span></a>
+    </nav>
+</div>
+
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<aside class="drawer" id="notifDrawer">
+    <div class="drawer-head">
+        <div><h3>消息通知</h3><p class="tiny muted" id="drawerSub" style="margin-top:4px">订单动态与系统消息</p></div>
+        <div style="display:flex;gap:4px">
+            <button class="btn btn-sm btn-ghost" id="readAllBtn">全部已读</button>
+            <button class="icon-btn" id="drawerClose"><span data-icon="close"></span></button>
+        </div>
+    </div>
+    <div class="drawer-body" id="notifList"></div>
+</aside>
+
+<div id="toastRoot" class="toast-root"></div>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/user.js"></script>
+</body>
+</html>

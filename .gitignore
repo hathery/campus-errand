@@ -1,0 +1,22 @@
+# 构建产物
+target/
+*.jar
+*.war
+*.class
+
+# 运行期数据
+data/
+*.mv.db
+*.trace.db
+uploads/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+
+# 日志与系统文件
+*.log
+.DS_Store
+Thumbs.db
